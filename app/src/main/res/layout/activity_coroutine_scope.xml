@@ -6,25 +6,24 @@
     android:gravity="center"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
 
     <Button
-        android:id="@+id/btn1"
-        android:text="Coroutine Demo"
+        android:id="@+id/btnGlobal"
+        android:text="Global Scope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn2"
-        android:text="Suspend Function"
+        android:id="@+id/btnLifecycle"
+        android:text="Lifecycle Scope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btn3"
-        android:text="Coroutine Scope"
+        android:id="@+id/btnViewModel"
+        android:text="ViewModel Scope"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
