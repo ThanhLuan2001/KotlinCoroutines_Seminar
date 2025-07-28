@@ -24,19 +24,18 @@ class SuspendActivity : AppCompatActivity() {
 
     private fun setUpClick() = with(binding) {
         btnRequest.setOnClickListener{
-            fetchData()
+            lifecycleScope.launch {
+                fetchData()
+            }
         }
         btnClick.setOnClickListener {
             Toast.makeText(this@SuspendActivity, "🟢 Vẫn bấm được!", Toast.LENGTH_SHORT).show()
         }
-
     }
 
-    private fun fetchData() {
-        lifecycleScope.launch {
-            Log.e("LuanNT", "Name: ${Thread.currentThread().name}")
-            delay(5000L)
-            Log.e("LuanNT", "End")
-        }
+    private suspend fun fetchData() {
+        Log.e("LuanNT", "Name: ${Thread.currentThread().name}")
+        delay(5000L)
+        Log.e("LuanNT", "End")
     }
 }

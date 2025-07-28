@@ -1,4 +1,4 @@
-package com.example.kotlincoroutines_seminar._3_CoroutineScope
+package com.example.kotlincoroutines_seminar._3_coroutine_scope
 
 import android.os.Bundle
 import android.util.Log

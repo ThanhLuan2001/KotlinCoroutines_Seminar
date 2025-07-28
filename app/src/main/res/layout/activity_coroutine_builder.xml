@@ -11,31 +11,13 @@
 
     <Button
         android:id="@+id/btn1"
-        android:text="Coroutine Demo"
+        android:text="Async"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btn2"
-        android:text="Suspend Function"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btn3"
-        android:text="Coroutine Scope"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btn4"
-        android:text="Coroutine Builder"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/btn5"
-        android:text="Job"
+        android:text="Run Blocking"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

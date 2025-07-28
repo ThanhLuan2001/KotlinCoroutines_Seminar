@@ -4,12 +4,14 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.example.kotlincoroutines_seminar._1_what_are_coroutine.CoroutineDemoActivity
 import com.example.kotlincoroutines_seminar._2_suspend_function.SuspendActivity
-import com.example.kotlincoroutines_seminar._3_CoroutineScope.CoroutineScopeActivity
+import com.example.kotlincoroutines_seminar._3_coroutine_scope.CoroutineScopeActivity
+import com.example.kotlincoroutines_seminar._4_coroutine_builder.CoroutineBuilderActivity
+import com.example.kotlincoroutines_seminar._5_job.JobActivity
 import com.example.kotlincoroutines_seminar.databinding.ActivityMainBinding
+import kotlinx.coroutines.async
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, CoroutineScopeActivity::class.java))
         }
 
-
+        btn4.setOnClickListener {
+            startActivity(Intent(this@MainActivity, CoroutineBuilderActivity::class.java))
+        }
+        btn5.setOnClickListener {
+            startActivity(Intent(this@MainActivity, JobActivity::class.java))
+        }
     }
 }

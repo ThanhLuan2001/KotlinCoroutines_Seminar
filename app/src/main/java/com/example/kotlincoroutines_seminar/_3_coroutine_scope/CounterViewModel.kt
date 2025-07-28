@@ -1,4 +1,4 @@
-package com.example.kotlincoroutines_seminar._3_CoroutineScope
+package com.example.kotlincoroutines_seminar._3_coroutine_scope
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
