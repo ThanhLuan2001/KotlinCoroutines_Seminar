@@ -12,8 +12,7 @@ import com.example.kotlincoroutines_seminar.databinding.ActivityJobBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.coroutineScope
+
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -37,19 +36,10 @@ class JobActivity : AppCompatActivity() {
     }
 
     private fun setUpClick() = with(binding) {
-        btnStart.setOnClickListener {
-            startTasks()
-        }
-
-        btnCancel.setOnClickListener {
-            sharedJob.cancel()
-        }
-        btnJoin.setOnClickListener {
-            joinTasks()
-        }
-        btnSupervisionJob.setOnClickListener {
-            supervisionExample()
-        }
+        btnStart.setOnClickListener { startTasks() }
+        btnCancel.setOnClickListener { sharedJob.cancel() }
+        btnJoin.setOnClickListener { joinTasks() }
+        btnSupervisionJob.setOnClickListener { supervisionExample() }
     }
 
 
@@ -77,11 +67,6 @@ class JobActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        sharedJob.cancel()
-    }
-
     private fun joinTasks() {
         lifecycleScope.launch {
             Log.e("LuanNT", "▶ Bắt đầu")
@@ -96,22 +81,31 @@ class JobActivity : AppCompatActivity() {
     }
 
     private fun supervisionExample() {
-        val scope = CoroutineScope(Dispatchers.Main + SupervisorJob())
+        val scope = CoroutineScope(Dispatchers.Default + Job())
 
-        val job1 = scope.launch {
+        Log.e("LuanNT","Start")
+
+        scope.launch {
             delay(1000)
-            throw RuntimeException("❌ Job 1 failed!") // ❌ không bắt lỗi
+            throw RuntimeException("❌ Job 1 failed!")
         }
 
-        val job2 = scope.launch {
+        scope.launch {
             delay(2000)
             Log.e("LuanNT","✅ Job 2 finished successfully!")
         }
 
-        runBlocking {
-            delay(2500)
+        scope.launch {
+            delay(3000)
             Log.e("LuanNT","🏁 Done supervision example")
         }
+
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        sharedJob.cancel()
     }
 
 }

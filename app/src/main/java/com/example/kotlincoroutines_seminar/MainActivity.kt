@@ -12,6 +12,8 @@ import com.example.kotlincoroutines_seminar._4_coroutine_builder.CoroutineBuilde
 import com.example.kotlincoroutines_seminar._5_job.JobActivity
 import com.example.kotlincoroutines_seminar.databinding.ActivityMainBinding
 import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
