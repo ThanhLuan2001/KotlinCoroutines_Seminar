@@ -10,6 +10,7 @@ import com.example.kotlincoroutines_seminar._2_suspend_function.SuspendActivity
 import com.example.kotlincoroutines_seminar._3_coroutine_scope.CoroutineScopeActivity
 import com.example.kotlincoroutines_seminar._4_coroutine_builder.CoroutineBuilderActivity
 import com.example.kotlincoroutines_seminar._5_job.JobActivity
+import com.example.kotlincoroutines_seminar._6_dispatcher.DispatcherActivity
 import com.example.kotlincoroutines_seminar.databinding.ActivityMainBinding
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -43,5 +44,10 @@ class MainActivity : AppCompatActivity() {
         btn5.setOnClickListener {
             startActivity(Intent(this@MainActivity, JobActivity::class.java))
         }
+
+        btn6.setOnClickListener {
+            startActivity(Intent(this@MainActivity, DispatcherActivity::class.java))
+        }
+
     }
 }
